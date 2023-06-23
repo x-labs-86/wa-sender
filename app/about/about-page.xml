@@ -1,0 +1,41 @@
+<Page
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <Label text="About"></Label>
+    </ActionBar>
+
+    <ScrollView height="100%" width="100%" orientation="vertical" marginTop="30">
+        <StackLayout orientation="vertical" class="about">
+            <Label text="#SUPPORT" textWrap="true" class="header" horizontalAlignment="right" />
+
+            <Label text="Give 5 Start" textWrap="true" class="title" />
+            <Label text="Jangan lupa berikan Rating 5 Bintang di playstore sebagai salah satu bentuk dukungan pada aplikasi ini :)" textWrap="true" class="desc" />
+            <Button text="Give 5 Star in Playstore Now" tap="rateNow" class="rate-button" />
+
+            <Label text="#ABOUT" textWrap="true" class="header" marginTop="20" horizontalAlignment="right" />
+
+            <Label text="Name" textWrap="true" class="title" />
+            <Label text="WhatsApp Sender (WA Sender)" textWrap="true" class="desc" />
+            
+            <Label text="Description" textWrap="true" class="title" marginTop="10" />
+            <Label text="With this apps, you can send message whatsapp to everybody, to every number phone without you save the number" textWrap="true" class="desc" />
+            
+            <Label text="First Release" textWrap="true" class="title" marginTop="10" />
+            <Label text="23 Juny 2023" textWrap="true" class="desc" />
+            
+            <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
+            <Label text="v1.0.0" textWrap="true" class="desc" />
+
+            <Label text="#CREDIT" textWrap="true" fontSize="28" color="#E0E0E0" marginTop="20" horizontalAlignment="right" />
+
+            <Label text="Font Icon" textWrap="true" class="title" marginTop="10" />
+            <Label text="fontawesome.com" textWrap="true" class="desc" />
+
+            <Label text="Icon" textWrap="true" class="title" marginTop="10" />
+            <Label text="flaticon.com" textWrap="true" class="desc" />
+            <Label text="flaticon.com/authors/murmur" textWrap="true" class="desc" />            
+        </StackLayout>
+    </ScrollView>
+</Page>

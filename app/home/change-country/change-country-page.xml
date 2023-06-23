@@ -1,0 +1,26 @@
+<Page
+    actionBarHidden="true"
+    loaded="onLoaded"
+    navigatingTo="onNavigatingTo" 
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <GridLayout rows="10,20,auto,auto,10,*,auto,30" columns="*,auto,*" width="100%" height="100%">
+        <Label text="COUNTRY DIAL CODE" textAlignment="center" fontWeight="bold" fontSize="15" paddingBottom="10" row="2" col="1" textWrap="true" />
+        <SearchBar
+            hint="Search by country name..."
+            text="{{ keyword }}"
+            clear="onClear"
+            submit="onSubmit"
+            row="3" col="1"
+            width="90%"
+            />
+        <ListView items="{{ items }}" itemTap="onItemTap" row="5" col="1" width="90%" height="100%" separatorColor="#40aeff" class="list-group" visibility="{{ items != false ? 'visible' : 'collapsed' }}">
+            <ListView.itemTemplate>
+                <GridLayout class="list-group-item" columns="*,auto" rows="auto,auto,auto">
+                    <Label text="{{ flag + ' ' + ' ' + dial_code + ' ' + name }}" fontSize="18" color="#40aeff" textWrap="true" col="0" row="0" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView> 
+        <Label text="Cancel" tap="home" fontSize="15" paddingTop="30" paddingBottom="10" textAlignment="center" row="6" col="1" />
+    </GridLayout>
+</Page>

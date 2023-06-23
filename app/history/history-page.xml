@@ -1,0 +1,27 @@
+<Page
+    loaded="onLoaded" 
+    navigatingTo="onNavigatingTo"  
+    xmlns="http://schemas.nativescript.org/tns.xsd">
+
+    <ActionBar>
+        <Label text="HISTORY"></Label>
+        <ActionItem tap="refreshTap" text="Refresh this page" android.position="popup" />
+        <ActionItem tap="clearTap" text="Clear all history" android.position="popup" />
+    </ActionBar>
+
+    <GridLayout rows="auto,auto,auto,auto" height="100%" class="history">
+        <ListView height="100%" row="1" items="{{ items }}" itemTap="onItemTap" separatorColor="#40aeff" class="list-group" visibility="{{ items != false ? 'visible' : 'collapsed' }}">
+            <ListView.itemTemplate>
+                <GridLayout class="list-group-item" columns="*,auto" rows="auto,auto,auto">
+                    <Label text="{{ flag + ' ' + phone }}" textWrap="true" class="phone" col="0" row="0" />
+                    <Label text="{{ dateTime }}" textWrap="true" class="date-time" col="0" row="1" />
+                    <Label text="Tap here to show actions!" textWrap="true" class="info" col="0" row="2" />
+                </GridLayout>
+            </ListView.itemTemplate>
+        </ListView> 
+        <GridLayout rows="auto,auto,auto,*" marginTop="100" row="2" class="page__content" visibility="{{ items == false ? 'visible' : 'collapsed' }}">
+            <Label row="1" class="page__content-icon fas" text="&#xf1da;"></Label>
+            <Label row="2" class="page__content-placeholder" text="No data!"></Label>
+        </GridLayout>
+    </GridLayout>
+</Page>

@@ -1,0 +1,123 @@
+@import "@nativescript/theme/core";
+@import "@nativescript/theme/default";
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-weight: 400;
+}
+
+.fas {
+  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-weight: 900;
+}
+
+.far {
+  font-family: "Font Awesome 5 Free", "fa-regular-400";
+  font-weight: 400;
+}
+
+// Custom tabstrip item class
+.navigation__item {
+  &:active,
+  &:active Label {
+    @include colorize($contrasted-color: complementary background 20% 0%);
+  }
+}
+
+// Common page class
+.page__content {
+  &-icon,
+  &-placeholder {
+    color: const(grey);
+    font-size: 20;
+    vertical-align: center;
+    horizontal-align: center;
+  }
+
+  &-icon {
+    font-size: 72;
+    vertical-align: top;
+    margin-top: 20%;
+  }
+}
+
+.label-select-country {
+  border-width: 3;
+  border-color: #e0e0e0;
+  padding: 10 18 10 18;
+  color: #424242;
+  border-radius: 50%;
+  font-size: 20;
+  margin-left: 18;
+  margin-right: 18;
+}
+
+.input-number {
+  border-width: 3;
+  border-color: #e0e0e0;
+  placeholder-color: #bdbdbd;
+  padding: 18;
+  color: #424242;
+  border-radius: 50%;
+  font-size: 20;
+}
+
+.btn-whatsapp {
+  height: 60;
+  color: #000;
+  border-radius: 30;
+  text-transform: uppercase;
+  background-color: #40aeff;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.history {
+  .phone {
+    color: #40aeff;
+    font-weight: 700;
+    font-size: 18;
+  }
+
+  .date-time {
+    color: #757575;
+  }
+  .info {
+    color: #bdbdbd;
+    font-style: italic;
+  }
+}
+
+.about {
+  margin-left: 20;
+  margin-right: 20;
+  padding-bottom: 50;
+
+  .header {
+    font-size: 28;
+    color: #e0e0e0;
+  }
+
+  .title {
+    font-size: 20;
+    color: #212121;
+  }
+
+  .desc {
+    font-size: 13;
+    color: #616161;
+  }
+
+  .rate-button {
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #689f38;
+    border-width: 0;
+    border-radius: 25;
+    margin-top: 10;
+  }
+}
