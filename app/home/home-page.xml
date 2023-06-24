@@ -6,9 +6,6 @@
 
     <StackLayout height="100%" width="100%">
       <GridLayout rows="20,*,auto,*,auto,10,auto,10,auto,*" marginRight="10" marginLeft="10">
-        <!-- <GridLayout columns="*,auto" row="2">
-          <Label text="{{ configFlag }}" fontSize="22" background="#E8F5E9" padding="8" borderRadius="50%" marginTop="5" col="1" />
-        </GridLayout> -->
         <Image src="res://logo" height="50%" row="2" textAlignment="center" loadMode="async" />
         <GridLayout columns="*,auto" row="4" class="label-select-country" tap="changeCountry">
           <Label text="{{ countryFlag + ' ' + countryDialCode + ' ' + countryName }}" col="0" />
