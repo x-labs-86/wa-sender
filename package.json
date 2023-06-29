@@ -4,6 +4,8 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@nativescript-community/ui-material-snackbar": "^7.1.3",
+    "@nativescript-use/nativescript-clipboard": "^0.0.3",
     "@nativescript/core": "~8.5.0",
     "@nativescript/social-share": "^2.3.0",
     "@nativescript/theme": "~3.0.2"

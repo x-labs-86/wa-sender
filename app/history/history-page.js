@@ -7,11 +7,15 @@ import {
   Dialogs,
 } from "@nativescript/core";
 import { shareText } from "@nativescript/social-share";
+import { Clipboard } from "@nativescript-use/nativescript-clipboard";
+import { SnackBar } from "@nativescript-community/ui-material-snackbar";
 
 var model = GlobalModel([]);
 var context;
 
 const dataHistory = new ObservableArray([]);
+const clipboard = new Clipboard();
+const snackbar = new SnackBar();
 
 export function onLoaded() {
   __loadData();
@@ -33,7 +37,10 @@ export function __loadData() {
     if (data.length > 0) {
       for (let i = 0; i < data.length; i++) {
         dataHistory.push({
+          name: data[i].name,
           phone: data[i].phone,
+          message: data[i].message,
+          country: data[i].countryName,
           flag: data[i].countryFlag,
           dateTime: data[i].dateTime,
         });
@@ -57,7 +64,14 @@ export function clearTap() {
     if (result) {
       LSdrop();
       __loadData();
-      alert("Successfully cleared history data :)");
+      snackbar.action({
+        message: "Successfully cleared history data :)",
+        actionText: "X",
+        textColor: "#FFFFFF",
+        actionTextColor: "#FFFFFF",
+        backgroundColor: "#1565C0",
+        hideDelay: 2000,
+      });
     }
   });
 }
@@ -75,7 +89,7 @@ export function onItemTap(args) {
     title: "Actions for " + itemTapData.phone,
     message: "",
     cancelButtonText: "Cancel",
-    actions: ["Go to WhatsApp", "Share To", "Remove"],
+    actions: ["Go to WhatsApp", "Copy Phone Number", "Share To", "Remove"],
     cancelable: true, // Android only
   };
 
@@ -87,6 +101,18 @@ export function onItemTap(args) {
         let phoneNumber = itemTapData.phone;
         let fullUrl = configUrl + phoneNumber;
         Utils.openUrl(fullUrl);
+        break;
+
+      case "COPY PHONE NUMBER":
+        clipboard.copy(itemTapData.phone);
+        snackbar.action({
+          message: itemTapData.phone + " has been copied",
+          actionText: "X",
+          textColor: "#333333",
+          actionTextColor: "#333333",
+          backgroundColor: "#FFEB3B",
+          hideDelay: 2000,
+        });
         break;
 
       case "SHARE TO":
@@ -103,7 +129,14 @@ export function onItemTap(args) {
           if (result === true) {
             LSremove(itemIndex);
             __loadData();
-            alert(itemTapData.phone + " has been removed");
+            snackbar.action({
+              message: itemTapData.phone + " has been removed",
+              actionText: "X",
+              textColor: "#FFFFFF",
+              actionTextColor: "#FFFFFF",
+              backgroundColor: "#1565C0",
+              hideDelay: 2000,
+            });
           }
         });
         break;

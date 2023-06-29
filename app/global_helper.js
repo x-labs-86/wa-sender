@@ -459,8 +459,17 @@ export function getCurrentTime() {
     ],
     monthName = months[d.getMonth()];
 
-  var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"],
-    dayName = days[d.getDay()];
+  // var days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum'at", "Sabtu"];
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var dayName = days[d.getDay()];
 
   var result =
     dayName +

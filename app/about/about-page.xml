@@ -26,7 +26,10 @@
             <Label text="23 Juny 2023" textWrap="true" class="desc" />
             
             <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="v1.0.0" textWrap="true" class="desc" />
+            <Label text="v1.0.5" textWrap="true" class="desc" />
+
+            <Label text="Developer" textWrap="true" class="title" marginTop="10" />
+            <Label text="x-labs.my.id by KANG-CAHYA.COM" textWrap="true" class="desc" />
 
             <Label text="#CREDIT" textWrap="true" fontSize="28" color="#E0E0E0" marginTop="20" horizontalAlignment="right" />
 

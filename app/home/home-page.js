@@ -67,7 +67,7 @@ export function __parseCountry() {
     context.set("countryName", currentCountry.name);
     context.set("countryDialCode", currentCountry.dial_code);
     context.set("countryFlag", currentCountry.flag);
-    context.set("hint_text", "Type WhatsApp Number...");
+    context.set("hint_text", "Type Phone Number...");
     context.set("phone_number", "");
   } catch (error) {
     console.error("Error parsing JSON:", error);
@@ -85,12 +85,16 @@ export function openApps() {
   Utils.openUrl(fullUrl);
   const dataInsert = {
     guid: generateUUID(),
+    name: false,
     phone: phoneNumber,
+    message: false,
     countryName: currentCountry.name,
     countryDialCode: currentCountry.dial_code,
     countryFlag: currentCountry.flag,
     countryCode: currentCountry.code,
     dateTime: getCurrentTime(),
+    mark: false,
+    archived: false,
   };
   LSinsert(dataInsert);
 
