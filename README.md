@@ -7,7 +7,7 @@ Android Apps for Send whatsapp message Without Saveing Phone Number.
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/K3K02WIPN)
 
-### Downloa APK (latest v1.0.1)
+### Downloa APK
 
 - [Download via Playstore](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.whatsappsender)
 
