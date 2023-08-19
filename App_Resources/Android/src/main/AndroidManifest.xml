@@ -20,6 +20,10 @@
 		android:label="@string/app_name"
 		android:theme="@style/AppTheme"
 		android:hardwareAccelerated="true">
+		<meta-data
+			android:name="com.google.android.gms.ads.APPLICATION_ID"
+			android:value="ca-app-pub-1640120316722376~9613851970"
+		/>
 
 		<activity
 			android:name="com.tns.NativeScriptActivity"

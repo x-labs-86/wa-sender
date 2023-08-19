@@ -1,6 +1,7 @@
 <Page
     navigatingTo="onNavigatingTo"  
-    xmlns="http://schemas.nativescript.org/tns.xsd">
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:ui="@nativescript/firebase-admob">
 
     <ActionBar>
         <Label text="About"></Label>
@@ -14,6 +15,14 @@
             <Label text="Jangan lupa berikan Rating 5 Bintang di playstore sebagai salah satu bentuk dukungan pada aplikasi ini :)" textWrap="true" class="desc" />
             <Button text="Give 5 Star in Playstore Now" tap="rateNow" class="rate-button" />
 
+            <StackLayout>
+                <ui:BannerAd
+                    height="100"
+                    width="320"
+                    unitId="ca-app-pub-1640120316722376/2612533193"
+                    layoutChanged="LARGE_BANNER"/>
+            </StackLayout>
+
             <Label text="#ABOUT" textWrap="true" class="header" marginTop="20" horizontalAlignment="right" />
 
             <Label text="Name" textWrap="true" class="title" />
@@ -26,19 +35,35 @@
             <Label text="23 Juny 2023" textWrap="true" class="desc" />
             
             <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="v1.0.5" textWrap="true" class="desc" />
+            <Label text="v1.0.7" textWrap="true" class="desc" />
 
             <Label text="Developer" textWrap="true" class="title" marginTop="10" />
             <Label text="x-labs.my.id by KANG-CAHYA.COM" textWrap="true" class="desc" />
+
+            <StackLayout>
+                <ui:BannerAd
+                    height="100"
+                    width="320"
+                    unitId="ca-app-pub-1640120316722376/3114277833"
+                    layoutChanged="LARGE_BANNER"/>
+            </StackLayout>
 
             <Label text="#CREDIT" textWrap="true" fontSize="28" color="#E0E0E0" marginTop="20" horizontalAlignment="right" />
 
             <Label text="Font Icon" textWrap="true" class="title" marginTop="10" />
             <Label text="fontawesome.com" textWrap="true" class="desc" />
 
-            <Label text="Icon" textWrap="true" class="title" marginTop="10" />
-            <Label text="flaticon.com" textWrap="true" class="desc" />
-            <Label text="flaticon.com/authors/murmur" textWrap="true" class="desc" />            
+            <Label text="Icon Apps" textWrap="true" class="title" marginTop="10" />
+            <Label text="flaticon.com/free-icons/direction" textWrap="true" class="desc" />
+            <Label text="flaticon.com/authors/murmur" textWrap="true" class="desc" />  
+
+            <StackLayout>
+                <ui:BannerAd
+                    height="100"
+                    width="320"
+                    unitId="ca-app-pub-1640120316722376/5781622016"
+                    layoutChanged="LARGE_BANNER"/>
+            </StackLayout>          
         </StackLayout>
     </ScrollView>
 </Page>

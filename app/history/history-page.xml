@@ -1,7 +1,8 @@
 <Page
     loaded="onLoaded" 
     navigatingTo="onNavigatingTo"  
-    xmlns="http://schemas.nativescript.org/tns.xsd">
+    xmlns="http://schemas.nativescript.org/tns.xsd"
+    xmlns:ui="@nativescript/firebase-admob">
 
     <ActionBar>
         <Label text="HISTORY"></Label>
@@ -26,5 +27,12 @@
             <Label row="1" class="page__content-icon fas" text="&#xf1da;"></Label>
             <Label row="2" class="page__content-placeholder" text="No data!"></Label>
         </GridLayout>
+        <StackLayout row="3">
+            <ui:BannerAd
+                height="100"
+                width="320"
+                unitId="ca-app-pub-1640120316722376/6711560304"
+                layoutChanged="LARGE_BANNER"/>
+        </StackLayout>
     </GridLayout>
 </Page>
