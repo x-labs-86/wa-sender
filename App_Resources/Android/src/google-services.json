@@ -1,39 +1,38 @@
 {
   "project_info": {
-    "project_number": "996189842385",
-    "project_id": "whatsapp-sender-f8293",
-    "storage_bucket": "whatsapp-sender-f8293.appspot.com"
+    "project_number": "649854211874",
+    "project_id": "wa-sender-ab701",
+    "storage_bucket": "wa-sender-ab701.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:996189842385:android:60a9685124543555f4cef0",
+        "mobilesdk_app_id": "1:649854211874:android:73a2465a831a83db97b77b",
         "android_client_info": {
-          "package_name": "com.kang.cahya.apps.whatsappsender"
+          "package_name": "com.kang.cahya.apps.wasender"
         }
       },
       "oauth_client": [
         {
-          "client_id": "996189842385-vuqb2g1vbdvhse6adcd8t4falfi5g5sh.apps.googleusercontent.com",
+          "client_id": "649854211874-mtoo3ka5ntlnteldugm59hcr63e1r517.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA9MgRnyIDX_E8wEAbqU23zeWRqSjCqfuM"
+          "current_key": "AIzaSyBNaZ7RZYF-kNKV0ZS-t6GDAuOHVTbFN-I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "996189842385-vuqb2g1vbdvhse6adcd8t4falfi5g5sh.apps.googleusercontent.com",
+              "client_id": "649854211874-mtoo3ka5ntlnteldugm59hcr63e1r517.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
         }
-      },
-      "admob_app_id": "ca-app-pub-1640120316722376~9613851970"
+      }
     }
   ],
   "configuration_version": "1"

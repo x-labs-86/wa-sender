@@ -19,23 +19,23 @@
                 <ui:BannerAd
                     height="100"
                     width="320"
-                    unitId="ca-app-pub-1640120316722376/2612533193"
+                    unitId="ca-app-pub-1640120316722376/4236152774"
                     layoutChanged="LARGE_BANNER"/>
             </StackLayout>
 
             <Label text="#ABOUT" textWrap="true" class="header" marginTop="20" horizontalAlignment="right" />
 
             <Label text="Name" textWrap="true" class="title" />
-            <Label text="WhatsApp Sender (WA Sender)" textWrap="true" class="desc" />
+            <Label text="WA Sender" textWrap="true" class="desc" />
             
             <Label text="Description" textWrap="true" class="title" marginTop="10" />
             <Label text="With this apps, you can send message whatsapp to everybody, to every number phone without you save the number" textWrap="true" class="desc" />
             
             <Label text="First Release" textWrap="true" class="title" marginTop="10" />
-            <Label text="23 Juny 2023" textWrap="true" class="desc" />
+            <Label text="27 August 2023" textWrap="true" class="desc" />
             
             <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="v1.0.7" textWrap="true" class="desc" />
+            <Label text="v1.0.001" textWrap="true" class="desc" />
 
             <Label text="Developer" textWrap="true" class="title" marginTop="10" />
             <Label text="x-labs.my.id by KANG-CAHYA.COM" textWrap="true" class="desc" />
@@ -44,7 +44,7 @@
                 <ui:BannerAd
                     height="100"
                     width="320"
-                    unitId="ca-app-pub-1640120316722376/3114277833"
+                    unitId="ca-app-pub-1640120316722376/3194533849"
                     layoutChanged="LARGE_BANNER"/>
             </StackLayout>
 
@@ -61,7 +61,7 @@
                 <ui:BannerAd
                     height="100"
                     width="320"
-                    unitId="ca-app-pub-1640120316722376/5781622016"
+                    unitId="ca-app-pub-1640120316722376/6551362910"
                     layoutChanged="LARGE_BANNER"/>
             </StackLayout>          
         </StackLayout>

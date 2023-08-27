@@ -22,7 +22,7 @@
 		android:hardwareAccelerated="true">
 		<meta-data
 			android:name="com.google.android.gms.ads.APPLICATION_ID"
-			android:value="ca-app-pub-1640120316722376~9613851970"
+			android:value="ca-app-pub-1640120316722376~3980754488"
 		/>
 
 		<activity
