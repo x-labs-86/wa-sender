@@ -1,5 +1,5 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/icon.png">
-<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/icon.png" width="128">
+<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/icon.png" width="128">
 
 # WA Sender
 
@@ -13,7 +13,7 @@ Android Apps for Send whatsapp message Without Saveing Phone Number.
 
 ### Screenshoot
 
-<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-1.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-2.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-3.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-4.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-5.png" width="200">
+<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/screen-1.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/screen-2.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/screen-3.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/screen-4.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/wa-sender/screen-5.png" width="200">
 
 ### Requirement To Install
 
