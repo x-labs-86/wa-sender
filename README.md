@@ -1,7 +1,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/icon.png">
 <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/icon.png" width="128">
 
-# Whatsapp Sender (WA Sender)
+# WA Sender
 
 Android Apps for Send whatsapp message Without Saveing Phone Number.
 
@@ -9,11 +9,11 @@ Android Apps for Send whatsapp message Without Saveing Phone Number.
 
 ### Downloa APK
 
-- [Download via Playstore](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.whatsappsender)
+- [Download via Playstore](https://play.google.com/store/apps/details?id=com.kang.cahya.apps.wasender)
 
 ### Screenshoot
 
-<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-0.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-1.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-2.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-3.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-4.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-5.png" width="200">
+<img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-1.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-2.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-3.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-4.png" width="200"> <img src="https://raw.githubusercontent.com/x-labs-86/hosting-assets/main/whatsapp-sender/screen-5.png" width="200">
 
 ### Requirement To Install
 
