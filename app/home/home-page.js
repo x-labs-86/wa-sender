@@ -3,6 +3,7 @@ import {
   fixingPhoneNumberFormat,
   getCurrentTime,
   generateUUID,
+  loadMyAdMob,
 } from "~/global_helper";
 import { LSinsert } from "~/local_storage_array";
 import { ApplicationSettings, Utils } from "@nativescript/core";
@@ -12,6 +13,8 @@ var context, framePage, currentCountry;
 
 export function onLoaded(args) {
   framePage = args.object.frame;
+  loadMyAdMob();
+  // __loadAdmob();
 
   if (!ApplicationSettings.hasKey("HAS_SETUP")) {
     const defaultSettings = {
@@ -95,6 +98,8 @@ export function openApps() {
     dateTime: getCurrentTime(),
     mark: false,
     archived: false,
+    contact: false,
+    history: true,
   };
   LSinsert(dataInsert);
 

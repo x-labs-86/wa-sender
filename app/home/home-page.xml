@@ -15,11 +15,11 @@
         <TextField hint="{{ hint_text }}" class="input-number" keyboardType="phone" text="{{ phone_number }}" textAlignment="center" maxLength="15" row="6" />
         <Button text="Start to send message" class="btn-whatsapp" row="8" tap="openApps" />
         <StackLayout row="10">
-          <ui:BannerAd
+          <!-- <ui:BannerAd
             height="100"
             width="320"
             unitId="ca-app-pub-1640120316722376/6291223056"
-            layoutChanged="LARGE_BANNER"/>
+            layoutChanged="LARGE_BANNER"/> -->
         </StackLayout>
       </GridLayout>
     </StackLayout>

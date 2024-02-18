@@ -1,3 +1,5 @@
+import { InterstitialAd } from "@nativescript/firebase-admob";
+
 export function countryList(keyword = false) {
   const jsonCountry = [
     { name: "Afghanistan", dial_code: "+93", code: "AF", flag: "🇦🇫" },
@@ -510,4 +512,19 @@ export function generateUUID() {
     }
     return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
   });
+}
+
+export function loadMyAdMob() {
+  const ad = InterstitialAd.createForAdRequest(
+    "ca-app-pub-1640120316722376/9241739891"
+  );
+
+  ad.onAdEvent((event, error, data) => {
+    /* 
+      event : adLoaded, adClosed
+     */
+    ad.show();
+  });
+
+  ad.load();
 }

@@ -1,4 +1,5 @@
 import { GlobalModel } from "~/global_model";
+import { loadMyAdMob } from "~/global_helper";
 import { LSget, LSremove, LSdrop } from "~/local_storage_array";
 import {
   ObservableArray,
@@ -35,7 +36,7 @@ export function __loadData() {
   if (DB.success) {
     const data = DB.data;
     if (data.length > 0) {
-      for (let i = 0; i < data.length; i++) {
+      /* for (let i = 0; i < data.length; i++) {
         dataHistory.push({
           name: data[i].name,
           phone: data[i].phone,
@@ -44,7 +45,19 @@ export function __loadData() {
           flag: data[i].countryFlag,
           dateTime: data[i].dateTime,
         });
-      }
+      } */
+      data.forEach((item, index) => {
+        // if (item.history) {
+        dataHistory.push({
+          name: item.name,
+          phone: item.phone,
+          message: item.message,
+          country: item.countryName,
+          flag: item.countryFlag,
+          dateTime: item.dateTime,
+        });
+        // }
+      });
       context.set("items", dataHistory);
     } else {
       context.set("items", false);
@@ -62,6 +75,7 @@ export function clearTap() {
     neutralButtonText: "No",
   }).then((result) => {
     if (result) {
+      loadMyAdMob();
       LSdrop();
       __loadData();
       snackbar.action({
@@ -104,6 +118,7 @@ export function onItemTap(args) {
         break;
 
       case "COPY PHONE NUMBER":
+        loadMyAdMob();
         clipboard.copy(itemTapData.phone);
         snackbar.action({
           message: itemTapData.phone + " has been copied",
@@ -127,6 +142,7 @@ export function onItemTap(args) {
           neutralButtonText: "No",
         }).then((result) => {
           if (result === true) {
+            loadMyAdMob();
             LSremove(itemIndex);
             __loadData();
             snackbar.action({
