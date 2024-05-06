@@ -6,8 +6,8 @@ import { openOrCreate } from "@nativescript-community/sqlite";
     - https://www.tutorialspoint.com/sqlite/index.htm
 */
 
-const sqlite = openOrCreate("dbname.db");
-const showError = false;
+const sqlite = openOrCreate("wa_sender_db.db");
+const showError = true;
 
 export async function SQL__select(
   table,

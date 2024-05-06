@@ -1,4 +1,24 @@
 import { InterstitialAd } from "@nativescript/firebase-admob";
+import { SQL__query } from "~/sql_helper";
+
+export function init__tables() {
+  SQL__query(`CREATE TABLE IF NOT EXISTS "dataphone" (
+    "id"	INTEGER NOT NULL UNIQUE,
+	"name"	TEXT DEFAULT NULL,
+	"phone"	TEXT NOT NULL,
+	"message"	TEXT DEFAULT NULL,
+	"country_name"	TEXT,
+	"country_dial_code"	TEXT,
+	"country_flag"	TEXT,
+	"country_code"	TEXT,
+	"date_time"	TEXT NOT NULL,
+	"mark"	TEXT DEFAULT NULL,
+	"archive"	INTEGER NOT NULL DEFAULT 0,
+	"contact"	INTEGER NOT NULL DEFAULT 0,
+	"history"	INTEGER NOT NULL DEFAULT 1,
+	PRIMARY KEY("id" AUTOINCREMENT)
+  )`);
+}
 
 export function countryList(keyword = false) {
   const jsonCountry = [

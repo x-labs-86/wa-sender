@@ -17,3 +17,9 @@ export function rateNow() {
     "https://play.google.com/store/apps/details?id=com.kang.cahya.apps.whatsappsender"
   );
 }
+
+export function reportNow() {
+  Utils.openUrl(
+    "mailto:kangcahyakeren@gmail.com?subject=Bugs Report - WA Sender Apps"
+  );
+}

@@ -4,17 +4,25 @@ import {
   getCurrentTime,
   generateUUID,
   loadMyAdMob,
+  init__tables,
 } from "~/global_helper";
-import { LSinsert } from "~/local_storage_array";
+import { LSget, LSinsert, LSdrop } from "~/local_storage_array";
 import { ApplicationSettings, Utils } from "@nativescript/core";
+import {
+  SQL__select,
+  SQL__insert,
+  SQL__update,
+  SQL__delete,
+} from "~/sql_helper";
 
 var model = GlobalModel([]);
 var context, framePage, currentCountry;
 
 export function onLoaded(args) {
   framePage = args.object.frame;
+
+  __autoMigrateToSqlite();
   loadMyAdMob();
-  // __loadAdmob();
 
   if (!ApplicationSettings.hasKey("HAS_SETUP")) {
     const defaultSettings = {
@@ -86,7 +94,7 @@ export function openApps() {
   const fullUrl = configUrl + phoneNumber;
 
   Utils.openUrl(fullUrl);
-  const dataInsert = {
+  /* const dataInsert = {
     guid: generateUUID(),
     name: false,
     phone: phoneNumber,
@@ -101,7 +109,25 @@ export function openApps() {
     contact: false,
     history: true,
   };
-  LSinsert(dataInsert);
+  LSinsert(dataInsert); */
+
+  // console.log("Insert >> ", dataInsert);
+  init__tables();
+  const data = [
+    { field: "name", value: NULL },
+    { field: "phone", value: phoneNumber },
+    { field: "message", value: NULL },
+    { field: "country_name", value: currentCountry.name },
+    { field: "country_dial_code", value: currentCountry.dial_code },
+    { field: "country_flag", value: currentCountry.flag },
+    { field: "country_code", value: currentCountry.code },
+    { field: "date_time", value: getCurrentTime() },
+    { field: "mark", value: NULL },
+    { field: "archive", value: 0 },
+    { field: "contact", value: 0 },
+    { field: "history", value: 1 },
+  ];
+  SQL__insert("dataphone", data);
 
   context.set("phone_number", "");
 }
@@ -112,4 +138,47 @@ export function changeCountry() {
     animated: true,
     transition: { name: "fade" },
   });
+}
+
+export function __autoMigrateToSqlite() {
+  const DB = LSget();
+  if (DB.success) {
+    const data = DB.data;
+    if (data.length > 0) {
+      // console.log("data local storage >>> ", data);
+      init__tables();
+      data.forEach((item) => {
+        let dataInsert = [
+          { field: "phone", value: item.phone },
+          { field: "country_name", value: item.countryName },
+          { field: "country_dial_code", value: item.countryDialCode },
+          { field: "country_flag", value: item.countryFlag },
+          { field: "country_code", value: item.countryCode },
+          { field: "date_time", value: item.dateTime },
+          { field: "archive", value: 0 },
+          { field: "contact", value: 0 },
+          { field: "history", value: 1 },
+        ];
+
+        if (item.name != false) {
+          dataInsert.push({ field: "name", value: item.name });
+        }
+        if (item.message != false) {
+          dataInsert.push({ field: "message", value: item.message });
+        }
+        SQL__insert("dataphone", dataInsert);
+      });
+
+      LSdrop();
+
+      /* console.log("data local storage after migrate >>> ", LSget());
+      SQL__select(
+        "dataphone",
+        "*",
+        "WHERE history=1 AND archive=0 AND contact=0"
+      ).then((res) => {
+        console.log("data sqlite >>> ", res);
+      }); */
+    }
+  }
 }

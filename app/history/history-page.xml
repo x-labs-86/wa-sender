@@ -8,31 +8,34 @@
         <Label text="HISTORY"></Label>
         <ActionItem tap="refreshTap" text="Refresh this page" android.position="popup" />
         <ActionItem tap="clearTap" text="Clear all history" android.position="popup" />
+        <!-- <ActionItem tap="__migrateToSqlite" text="Migrate" android.position="popup" />
+        <ActionItem tap="__truncate" text="Truncate" android.position="popup" />
+        <ActionItem tap="__dummyLocalStorageData" text="Dummy Data" android.position="popup" /> -->
     </ActionBar>
 
     <GridLayout rows="auto,auto,auto,auto" height="100%" class="history">
-        <ListView height="100%" row="1" items="{{ items }}" itemTap="onItemTap" separatorColor="#40aeff" class="list-group" visibility="{{ items != false ? 'visible' : 'collapsed' }}">
+        <ListView row="1" height="100%" items="{{ items }}" itemTap="onItemTap" separatorColor="#40aeff" class="list-group" visibility="{{ items ? 'visible' : 'collapsed' }}">
             <ListView.itemTemplate>
                 <GridLayout class="list-group-item" columns="*,auto" rows="auto,auto,auto,auto,auto">
                     <Label text="{{ flag + ' ' + country }}" textWrap="true" class="country" col="0" row="0" />
-                    <Label text="{{ name }}" textWrap="true" class="name" col="0" row="1" visibility="{{ name === false ? 'collapsed' : 'visible' }}" />
+                    <Label text="{{ name }}" textWrap="true" class="name" col="0" row="1" visibility="{{ !name ? 'collapsed' : 'visible' }}" />
                     <Label text="{{ phone }}" textWrap="true" class="phone" col="0" row="2" />
-                    <Label text="{{ message }}" textWrap="true" class="message" col="0" row="3" visibility="{{ message === false ? 'collapsed' : 'visible' }}" />
+                    <Label text="{{ message }}" textWrap="true" class="message" col="0" row="3" visibility="{{ !message ? 'collapsed' : 'visible' }}" />
                     <Label text="{{ dateTime }}" textWrap="true" class="date-time" col="0" row="4" />
                     <!-- <Label text="Tap here to show actions!" textWrap="true" class="info" col="0" row="4" /> -->
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView> 
-        <GridLayout rows="auto,auto,auto,*" marginTop="100" row="2" class="page__content" visibility="{{ items == false ? 'visible' : 'collapsed' }}">
+        <GridLayout rows="auto,auto,auto,auto,*" marginTop="100" row="2" class="page__content" visibility="{{ !items ? 'visible' : 'collapsed' }}">
             <Label row="1" class="page__content-icon fas" text="&#xf1da;"></Label>
             <Label row="2" class="page__content-placeholder" text="No data!"></Label>
+            <Button row="3" tap="refreshTap" text="Refresh" width="100" />
         </GridLayout>
         <StackLayout row="3">
-            <ui:BannerAd
+            <!-- <ui:BannerAd
                 height="100"
                 width="320"
-                unitId="ca-app-pub-1640120316722376/6179789832"
-                layoutChanged="LARGE_BANNER"/>
+                unitId="ca-app-pub-1640120316722376/5648538533"/> -->
         </StackLayout>
     </GridLayout>
 </Page>
