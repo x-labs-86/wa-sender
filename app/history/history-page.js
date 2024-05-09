@@ -28,6 +28,7 @@ const snackbar = new SnackBar();
 
 export function onLoaded() {
   // __loadData();
+  init__tables();
   __loadDataSqlite();
 }
 

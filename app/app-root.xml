@@ -1,4 +1,40 @@
-<TabView androidTabsPosition="bottom">
+<Page xmlns:mdt="@nativescript-community/ui-material-bottom-navigation">
+    <mdt:BottomNavigation width="100%" iosOverflowSafeArea="true" selectedIndex="0" tabsPosition="bottom" swipeEnabled="true">
+        <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
+        <mdt:TabStrip color="#FFF">
+            <mdt:TabStripItem>
+                <Image src="font://&#xf1d8;" class="far"></Image>
+                <Label text="Start New" ios:fontSize="10" android:fontSize="12"></Label>
+            </mdt:TabStripItem>
+            <mdt:TabStripItem>
+                <Image src="font://&#xf1da;" class="fas"></Image>
+                <Label text="History" ios:fontSize="10" android:fontSize="12"></Label>
+            </mdt:TabStripItem>
+            <mdt:TabStripItem>
+                <Label text="About" ios:fontSize="10" android:fontSize="12"></Label>
+                <Image src="font://&#xf0eb;" class="far" id="tab-inbox-icon-fal"></Image>
+            </mdt:TabStripItem>
+        </mdt:TabStrip>
+
+        <!-- The number of TabContentItem components should corespond to the number of TabStripItem components -->
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="home/home-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="history/history-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+        <mdt:TabContentItem>
+            <GridLayout>
+                <Frame defaultPage="about/about-page" />
+            </GridLayout>
+        </mdt:TabContentItem>
+    </mdt:BottomNavigation>
+</Page>
+<!-- <TabView androidTabsPosition="bottom">
     <TabViewItem title="Start New">
         <Frame defaultPage="home/home-page" />
     </TabViewItem>
@@ -10,4 +46,4 @@
     <TabViewItem title="About">
         <Frame defaultPage="about/about-page" />
     </TabViewItem>
-</TabView>
+</TabView> -->

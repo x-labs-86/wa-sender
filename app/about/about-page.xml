@@ -4,26 +4,37 @@
     xmlns:ui="@nativescript/firebase-admob">
 
     <ActionBar>
-        <Label text="About"></Label>
+        <Label text="&#xf0eb; ABOUT" class="action-bar-title far"></Label>
+        <ActionItem tap="openUrl" text="Blog" url="https://www.kang-cahya.com" android.position="popup" />
+        <ActionItem tap="openUrl" text="Github" url="https://github.com/dyazincahya" android.position="popup" />
+        <ActionItem tap="openUrl" text="Official Site" url="https://x-labs.my.id" android.position="popup" />
+        <ActionItem tap="openUrl" text="Developer Page" url="https://play.google.com/store/apps/dev?id=8941046243892038548" android.position="popup" />
     </ActionBar>
 
     <ScrollView height="100%" width="100%" orientation="vertical" marginTop="30">
         <StackLayout orientation="vertical" class="about">
-            <Label text="#SUPPORT" textWrap="true" class="header" horizontalAlignment="right" />
+            <Label text="&#xf5c2; Feedback And Support" textWrap="true" class="header far" />
 
-            <Label text="Give 5 Start" textWrap="true" class="title" />
-            <Label text="Don't forget to give 5 star for this apps on Playstore" textWrap="true" class="desc" />
-            <Button text="Rate Now" tap="rateNow" class="rate-button" />
+            <GridLayout marginTop="10" columns="*,*">
+                <StackLayout col="0">
+                    <Label text="Give 5 Start" textWrap="true" class="title" />
+                    <Label text="Don't forget to give 5 star for this apps on Playstore" textWrap="true" class="desc" />
+                    <Button text="Rate Now" tap="rateNow" class="rate-button" />
+                </StackLayout>
+                <StackLayout col="1">
+                    <Label text="Bugs Report" textWrap="true" class="title" />
+                    <Label text="Don't forget report to us if you found a bugs on this apps" textWrap="true" class="desc" />
+                    <Button text="Report Now" tap="reportNow" class="report-button" />
+                </StackLayout>
+            </GridLayout>
             
-            <Label text="#FEEDBACK" textWrap="true" class="header" horizontalAlignment="right" />
+            <!-- <Label text="&#x23; FEEDBACK" textWrap="true" class="header fas" marginTop="35" horizontalAlignment="right" /> -->
 
-            <Label text="Bugs Report" textWrap="true" class="title" />
-            <Label text="Don't forget report to us if you found a bugs on this apps" textWrap="true" class="desc" />
-            <Button text="Report Now" tap="reportNow" class="report-button" />
+            
 
-            <Label text="#ABOUT" textWrap="true" class="header" marginTop="20" horizontalAlignment="right" />
+            <Label text="&#xf2bb; About" textWrap="true" class="header far" marginTop="35" />
 
-            <Label text="Name" textWrap="true" class="title" />
+            <Label text="Name" textWrap="true" class="title" marginTop="10" />
             <Label text="WA Sender" textWrap="true" class="desc" />
             
             <Label text="Description" textWrap="true" class="title" marginTop="10" />
@@ -36,7 +47,7 @@
             <Label text="X-LABS (x-labs.my.id)" textWrap="true" class="desc" />
 
 
-            <Label text="#CREDIT" textWrap="true" fontSize="28" color="#E0E0E0" marginTop="20" horizontalAlignment="right" />
+            <Label text="&#xf25d; Credit" textWrap="true" class="header far" marginTop="35" />
 
             <Label text="Font Icon" textWrap="true" class="title" marginTop="10" />
             <Label text="fontawesome.com" textWrap="true" class="desc" />

@@ -535,16 +535,15 @@ export function generateUUID() {
 }
 
 export function loadMyAdMob() {
-  const ad = InterstitialAd.createForAdRequest(
+  /* const ad = InterstitialAd.createForAdRequest(
     "ca-app-pub-1640120316722376/9241739891"
   );
 
   ad.onAdEvent((event, error, data) => {
-    /* 
-      event : adLoaded, adClosed
-     */
+    // event : adLoaded, adClosed
+
     ad.show();
   });
 
-  ad.load();
+  ad.load(); */
 }

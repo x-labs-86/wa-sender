@@ -23,3 +23,9 @@ export function reportNow() {
     "mailto:kangcahyakeren@gmail.com?subject=Bugs Report - WA Sender Apps"
   );
 }
+
+export function openUrl(args) {
+  if (args.object && args.object.url) {
+    Utils.openUrl(args.object.url);
+  }
+}
