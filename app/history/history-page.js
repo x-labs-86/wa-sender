@@ -30,6 +30,7 @@ export function onLoaded() {
   // __loadData();
   init__tables();
   __loadDataSqlite();
+  loadMyAdMob();
 }
 
 export function onNavigatingTo(args) {
