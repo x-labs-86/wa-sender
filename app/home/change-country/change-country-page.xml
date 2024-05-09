@@ -17,7 +17,7 @@
         <ListView items="{{ items }}" itemTap="onItemTap" row="5" col="1" width="90%" height="100%" separatorColor="#40aeff" class="list-group" visibility="{{ items != false ? 'visible' : 'collapsed' }}">
             <ListView.itemTemplate>
                 <GridLayout class="list-group-item" columns="*,auto" rows="auto,auto,auto">
-                    <Label text="{{ flag + ' ' + ' ' + dial_code + ' ' + name }}" fontSize="18" color="#40aeff" textWrap="true" col="0" row="0" />
+                    <Label text="{{ flag + ' ' + ' ' + dial_code + ' ' + name }}" fontSize="18" color="#60ACF8" textWrap="true" col="0" row="0" />
                 </GridLayout>
             </ListView.itemTemplate>
         </ListView> 

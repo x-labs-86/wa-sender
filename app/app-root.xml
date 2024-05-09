@@ -1,7 +1,7 @@
 <Page xmlns:mdt="@nativescript-community/ui-material-bottom-navigation">
     <mdt:BottomNavigation width="100%" iosOverflowSafeArea="true" selectedIndex="0" tabsPosition="bottom" swipeEnabled="true">
         <!-- The bottom tab UI is created via TabStrip (the containier) and TabStripItem (for each tab)-->
-        <mdt:TabStrip color="#FFF">
+        <mdt:TabStrip>
             <mdt:TabStripItem>
                 <Image src="font://&#xf1d8;" class="far"></Image>
                 <Label text="Start New" ios:fontSize="10" android:fontSize="12"></Label>
@@ -34,7 +34,7 @@
         </mdt:TabContentItem>
     </mdt:BottomNavigation>
 </Page>
-<!-- <TabView androidTabsPosition="bottom">
+<!--TabView androidTabsPosition="bottom" tabBackgroundColor="#FFFFFF" tabTextColor="#40aeff" androidSelectedTabHighlightColor="#60acf8">
     <TabViewItem title="Start New">
         <Frame defaultPage="home/home-page" />
     </TabViewItem>
@@ -46,4 +46,4 @@
     <TabViewItem title="About">
         <Frame defaultPage="about/about-page" />
     </TabViewItem>
-</TabView> -->
+</TabView-->

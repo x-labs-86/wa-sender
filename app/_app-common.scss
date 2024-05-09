@@ -32,7 +32,7 @@
 .page__content {
   &-icon,
   &-placeholder {
-    color: #40aeff;
+    color: #60acf8;
     font-size: 20;
     vertical-align: center;
     horizontal-align: center;
@@ -152,6 +152,14 @@
     margin-top: 10;
   }
 }
-BottomNavigation {
-  highlight-color: red; /* Replace with your desired color */
+
+MDTabStrip {
+  background-color: #40aeff;
+  selected-item-color: #ffffff;
+  un-selected-item-color: #aeddfc; //#b7e2ff;
+  highlight-color: #ffffff;
+}
+
+TabStripClassStyle MDTabStripItem {
+  background-color: #40aeff;
 }

@@ -6,15 +6,14 @@ import { Admob, InterstitialAd } from "@nativescript/firebase-admob";
 import { themer } from "@nativescript-community/ui-material-core";
 import { installMixins } from "@nativescript-community/ui-material-core";
 
-themer.setPrimaryColor("#40aeff");
-themer.setAccentColor("#E3F2FD");
-themer.setSecondaryColor("#FAFAFA");
-
-installMixins();
-
 Theme.setMode(Theme.Light); // Theme.Dark Or Theme.Light
 await firebase().initializeApp();
 Admob.init();
+
+themer.setPrimaryColor("#40aeff");
+themer.setAccentColor("#E3F2FD");
+themer.setSecondaryColor("#FAFAFA");
+installMixins();
 
 Application.run({ moduleName: "app-root" });
 /*
