@@ -10,6 +10,7 @@ import {
 import { shareText } from "@nativescript/social-share";
 import { Clipboard } from "@nativescript-use/nativescript-clipboard";
 import { SnackBar } from "@nativescript-community/ui-material-snackbar";
+
 import {
   SQL__select,
   SQL__selectRaw,
@@ -296,7 +297,7 @@ export function __loadDataSqlite() {
 // }
 
 export function clearTap() {
-  confirm({
+  Dialogs.confirm({
     title: "Clear data history",
     message: "Are you sure you want to do this?",
     okButtonText: "Yes",
@@ -366,12 +367,13 @@ export function onItemTap(args) {
         break;
 
       case "REMOVE":
-        confirm({
+        const confirmOptions = {
           title: "Confirm",
           message: "Are you sure want to remove this item?",
           okButtonText: "Yes",
           neutralButtonText: "No",
-        }).then((result) => {
+        };
+        confirm(confirmOptions).then((result) => {
           if (result === true) {
             loadMyAdMob();
             // LSremove(itemIndex);
@@ -387,6 +389,7 @@ export function onItemTap(args) {
             });
           }
         });
+
         break;
 
       default:
