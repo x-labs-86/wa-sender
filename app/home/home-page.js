@@ -114,18 +114,12 @@ export function openApps() {
   // console.log("Insert >> ", dataInsert);
   init__tables();
   const data = [
-    { field: "name", value: NULL },
     { field: "phone", value: phoneNumber },
-    { field: "message", value: NULL },
     { field: "country_name", value: currentCountry.name },
     { field: "country_dial_code", value: currentCountry.dial_code },
     { field: "country_flag", value: currentCountry.flag },
     { field: "country_code", value: currentCountry.code },
     { field: "date_time", value: getCurrentTime() },
-    { field: "mark", value: NULL },
-    { field: "archive", value: 0 },
-    { field: "contact", value: 0 },
-    { field: "history", value: 1 },
   ];
   SQL__insert("dataphone", data);
 
