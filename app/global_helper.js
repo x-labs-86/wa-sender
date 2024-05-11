@@ -1,4 +1,7 @@
-import { InterstitialAd } from "@nativescript/firebase-admob";
+import {
+  InterstitialAd,
+  RewardedInterstitialAd,
+} from "@nativescript/firebase-admob";
 import { SQL__query } from "~/sql_helper";
 
 export function init__tables() {
@@ -542,7 +545,9 @@ export function loadMyAdMob() {
   ad.onAdEvent((event, error, data) => {
     // event : adLoaded, adClosed
 
-    ad.show();
+    ad.show({
+      immersiveModeEnabled: true,
+    });
   });
 
   ad.load();

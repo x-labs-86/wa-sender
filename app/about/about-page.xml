@@ -41,7 +41,7 @@
             <Label text="With this apps, you can send message whatsapp to everybody, to every number phone without you save the number" textWrap="true" class="desc" />
             
             <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="v1.1.1" textWrap="true" class="desc" />
+            <Label text="v1.1.2" textWrap="true" class="desc" />
 
             <Label text="Developer" textWrap="true" class="title" marginTop="10" />
             <Label text="X-LABS (x-labs.my.id)" textWrap="true" class="desc" />

@@ -74,7 +74,7 @@ export function __loadDataSqlite() {
     "*",
     "WHERE history=1 AND archive=0 AND contact=0"
   ).then((res) => {
-    console.log("data sqlite >> ", res);
+    // console.log("data sqlite >> ", res);
     if (res && res.length > 0) {
       res.forEach((item) => {
         dataHistorySqlite.push({
