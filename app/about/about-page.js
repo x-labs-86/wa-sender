@@ -45,15 +45,15 @@ export function onItemTap(args) {
 }
 
 function _loadData() {
-  myHttpClient("https://x-labs.my.id/api/apps", "GET").then((res) => {
+  /* myHttpClient("https://x-labs.my.id/api/apps", "GET").then((res) => {
     context.set("heightListView", (res.data.length + 1) * 80);
     if (res && res.data.length) {
       context.set("items", res.data);
     } else {
       context.set("items", false);
     }
-  });
-  /* const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
+  }); */
+  const today = new Date().toISOString().split("T")[0]; // Get today's date in YYYY-MM-DD format
   const lastFetchDate = ApplicationSettings.getString("lastFetchDate", "");
   const cachedData = ApplicationSettings.getString("cachedData", "");
 
@@ -72,5 +72,5 @@ function _loadData() {
         context.set("items", false);
       }
     });
-  } */
+  }
 }
