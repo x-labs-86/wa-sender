@@ -34,16 +34,3 @@
         </mdt:TabContentItem>
     </mdt:BottomNavigation>
 </Page>
-<!--TabView androidTabsPosition="bottom" tabBackgroundColor="#FFFFFF" tabTextColor="#40aeff" androidSelectedTabHighlightColor="#60acf8">
-    <TabViewItem title="Start New">
-        <Frame defaultPage="home/home-page" />
-    </TabViewItem>
-
-    <TabViewItem title="History">
-        <Frame defaultPage="history/history-page" />
-    </TabViewItem>
-
-    <TabViewItem title="About">
-        <Frame defaultPage="about/about-page" />
-    </TabViewItem>
-</TabView-->

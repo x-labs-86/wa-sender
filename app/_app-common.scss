@@ -6,17 +6,17 @@
 
 // Font icon class
 .fab {
-  font-family: "Font Awesome 5 Brands", "fa-brands-400";
+  font-family: "Font Awesome 6 Brands", "fa-brands-400";
   font-weight: 400;
 }
 
 .fas {
-  font-family: "Font Awesome 5 Free", "fa-solid-900";
+  font-family: "Font Awesome 6 Free Solid", "fa-solid-900";
   font-weight: 900;
 }
 
 .far {
-  font-family: "Font Awesome 5 Free", "fa-regular-400";
+  font-family: "Font Awesome 6 Free", "fa-regular-400";
   font-weight: 400;
 }
 
@@ -116,7 +116,7 @@
   padding-bottom: 50;
 
   .header {
-    font-size: 28;
+    font-size: 18;
     color: #40aeff;
     padding-bottom: 10;
     border-bottom-width: 1;
@@ -141,6 +141,7 @@
     border-width: 0;
     border-radius: 25;
     margin-top: 10;
+    height: 30;
   }
 
   .report-button {
@@ -150,7 +151,17 @@
     border-width: 0;
     border-radius: 25;
     margin-top: 10;
+    height: 30;
   }
+}
+
+.btn-playstore {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #34a853;
+  border-width: 0;
+  border-radius: 25;
+  height: 40;
 }
 
 MDTabStrip {

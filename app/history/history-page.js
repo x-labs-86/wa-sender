@@ -1,6 +1,5 @@
 import { GlobalModel } from "~/global_model";
 import { loadMyAdMob, init__tables } from "~/global_helper";
-import { LSget, LSinsert, LSremove, LSdrop } from "~/local_storage_array";
 import {
   ObservableArray,
   ApplicationSettings,
@@ -11,13 +10,7 @@ import { shareText } from "@nativescript/social-share";
 import { Clipboard } from "@nativescript-use/nativescript-clipboard";
 import { SnackBar } from "@nativescript-community/ui-material-snackbar";
 
-import {
-  SQL__select,
-  SQL__selectRaw,
-  SQL__insert,
-  SQL__truncate,
-  SQL__delete,
-} from "~/sql_helper";
+import { SQL__select, SQL__delete } from "~/sql_helper";
 
 var model = GlobalModel([]);
 var context;
@@ -31,7 +24,7 @@ export function onLoaded() {
   // __loadData();
   init__tables();
   __loadDataSqlite();
-  loadMyAdMob();
+  // loadMyAdMob();
 }
 
 export function onNavigatingTo(args) {

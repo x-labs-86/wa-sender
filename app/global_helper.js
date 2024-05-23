@@ -2,6 +2,8 @@ import {
   InterstitialAd,
   RewardedInterstitialAd,
 } from "@nativescript/firebase-admob";
+import { Http, Dialogs } from "@nativescript/core";
+
 import { SQL__query } from "~/sql_helper";
 
 export function init__tables() {
@@ -551,4 +553,26 @@ export function loadMyAdMob() {
   });
 
   ad.load();
+}
+
+export async function myHttpClient(_url, _method = "GET", _data = {}) {
+  try {
+    if (_method.toUpperCase() === "GET") {
+      const res = await Http.request({
+        method: "GET",
+        url: _url,
+      });
+      return res.content.toJSON();
+    } else {
+      const res = await Http.request({
+        method: _method,
+        url: _url,
+        headers: { "Content-Type": "application/json" },
+        content: JSON.stringify(_data),
+      });
+      return res.content.toJSON();
+    }
+  } catch (e) {
+    Dialogs.alert("Error occurred!");
+  }
 }
