@@ -3,12 +3,14 @@ import { loadMyAdMob, init__tables } from "~/global_helper";
 import {
   ObservableArray,
   ApplicationSettings,
-  Utils,
   Dialogs,
+  Utils,
+  Application,
+  isAndroid,
+  isIOS,
 } from "@nativescript/core";
 import { shareText } from "@nativescript/social-share";
 import { Clipboard } from "@nativescript-use/nativescript-clipboard";
-import { SnackBar } from "@nativescript-community/ui-material-snackbar";
 
 import { SQL__select, SQL__delete } from "~/sql_helper";
 
@@ -18,7 +20,6 @@ var context;
 const dataHistorySqlite = new ObservableArray([]);
 const dataHistory = new ObservableArray([]);
 const clipboard = new Clipboard();
-const snackbar = new SnackBar();
 
 export function onLoaded() {
   // __loadData();
@@ -302,14 +303,7 @@ export function clearTap() {
       SQL__delete("dataphone", null, "WHERE history=1");
       // SQL__truncate("dataphone");
       __loadDataSqlite();
-      snackbar.action({
-        message: "Successfully cleared history data :)",
-        actionText: "X",
-        textColor: "#FFFFFF",
-        actionTextColor: "#FFFFFF",
-        backgroundColor: "#1565C0",
-        hideDelay: 2000,
-      });
+      Dialogs.alert("Successfully cleared history data :)");
     }
   });
 }
@@ -328,7 +322,13 @@ export function onItemTap(args) {
     title: "Actions for " + itemTapData.phone,
     message: "",
     cancelButtonText: "Cancel",
-    actions: ["Go to WhatsApp", "Copy Phone Number", "Share To", "Remove"],
+    actions: [
+      "Go to WhatsApp",
+      "Copy Phone Number",
+      "Save number to Contact",
+      "Share To",
+      "Remove",
+    ],
     cancelable: true, // Android only
   };
 
@@ -343,16 +343,9 @@ export function onItemTap(args) {
         break;
 
       case "COPY PHONE NUMBER":
-        loadMyAdMob();
+        // loadMyAdMob();
         clipboard.copy(itemTapData.phone);
-        snackbar.action({
-          message: itemTapData.phone + " has been copied",
-          actionText: "X",
-          textColor: "#333333",
-          actionTextColor: "#333333",
-          backgroundColor: "#FFEB3B",
-          hideDelay: 2000,
-        });
+        Dialogs.alert(itemTapData.phone + " has been copied");
         break;
 
       case "SHARE TO":
@@ -372,16 +365,18 @@ export function onItemTap(args) {
             // LSremove(itemIndex);
             SQL__delete("dataphone", itemTapData.id);
             __loadDataSqlite();
-            snackbar.action({
-              message: itemTapData.phone + " has been removed",
-              actionText: "X",
-              textColor: "#FFFFFF",
-              actionTextColor: "#FFFFFF",
-              backgroundColor: "#1565C0",
-              hideDelay: 2000,
-            });
+            Dialogs.alert(itemTapData.phone + " has been removed");
           }
         });
+
+        break;
+
+      case "SAVE NUMBER TO CONTACT":
+        let contact = {
+          name: itemTapData.name ? itemTapData.name : "Unknown",
+          phone: itemTapData.phone,
+        };
+        _saveToPhoneBook(contact);
 
         break;
 
@@ -389,4 +384,32 @@ export function onItemTap(args) {
         break;
     }
   });
+}
+
+export function _saveToPhoneBook(contact) {
+  if (isAndroid) {
+    // Android Intent to add a contact
+    const uri = android.net.Uri.parse("content://contacts/people/");
+
+    const intent = new android.content.Intent(
+      android.content.Intent.ACTION_INSERT,
+      uri
+    );
+
+    intent.setType(android.provider.ContactsContract.Contacts.CONTENT_TYPE);
+    intent.putExtra(
+      android.provider.ContactsContract.Intents.Insert.NAME,
+      contact.name
+    );
+    intent.putExtra(
+      android.provider.ContactsContract.Intents.Insert.PHONE,
+      contact.phone
+    );
+
+    Utils.android.getCurrentActivity().startActivity(intent);
+  } else if (isIOS) {
+    // iOS URL scheme to add a contact
+    const url = `telprompt:${contact.phone}`;
+    Utils.ios.openURL(url);
+  }
 }

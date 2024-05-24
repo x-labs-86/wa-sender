@@ -7,7 +7,7 @@ import {
   init__tables,
 } from "~/global_helper";
 import { LSget, LSinsert, LSdrop } from "~/local_storage_array";
-import { ApplicationSettings, Utils } from "@nativescript/core";
+import { ApplicationSettings, Utils, Dialogs } from "@nativescript/core";
 import {
   SQL__select,
   SQL__insert,
@@ -92,6 +92,21 @@ export function openApps() {
     currentCountry.dial_code
   );
   const fullUrl = configUrl + phoneNumber;
+
+  if (!phoneNumber) {
+    Dialogs.alert("Please enter a phone number!");
+    return;
+  }
+
+  if (phoneNumber.trim() == "") {
+    Dialogs.alert("Please enter a phone number!");
+    return;
+  }
+
+  if (phoneNumber == undefined) {
+    Dialogs.alert("Please enter a phone number!");
+    return;
+  }
 
   Utils.openUrl(fullUrl);
   /* const dataInsert = {

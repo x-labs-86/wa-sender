@@ -14,7 +14,7 @@
     <ScrollView height="100%" width="100%" orientation="vertical" marginTop="30">
         <StackLayout orientation="vertical" class="about">
             
-            <Label text="&#xf2bb; About" textWrap="true" class="header far" />
+            <Label text="&#xf2bb; This Apps" textWrap="true" class="header far" />
 
             <Label text="Name" textWrap="true" class="title" marginTop="10" />
             <Label text="WA Sender" textWrap="true" class="desc" />
@@ -22,11 +22,11 @@
             <Label text="Description" textWrap="true" class="title" marginTop="10" />
             <Label text="With this apps, you can send message whatsapp to everybody, to every number phone without you save the number" textWrap="true" class="desc" />
             
-            <Label text="Current Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="1.1.3 build 13" textWrap="true" class="desc" />
+            <Label text="Version" textWrap="true" class="title" marginTop="10" />
+            <Label text="1.1.3 build 15" textWrap="true" class="desc" />
 
             <Label text="Developer" textWrap="true" class="title" marginTop="10" />
-            <Label text="X-LABS (x-labs.my.id)" textWrap="true" class="desc" />
+            <Label text="X-LABS.my.id" textWrap="true" class="desc" />
 
             <Label text="&#xf5c2; Feedback And Support" textWrap="true" class="header far" marginTop="35" />
 
