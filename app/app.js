@@ -3,17 +3,9 @@ import { Theme } from "@nativescript/theme";
 import { firebase } from "@nativescript/firebase-core";
 import { Admob, InterstitialAd } from "@nativescript/firebase-admob";
 
-import { themer } from "@nativescript-community/ui-material-core";
-import { installMixins } from "@nativescript-community/ui-material-core";
-
 Theme.setMode(Theme.Light); // Theme.Dark Or Theme.Light
 await firebase().initializeApp();
 Admob.init();
-
-themer.setPrimaryColor("#40aeff");
-themer.setAccentColor("#E3F2FD");
-themer.setSecondaryColor("#FAFAFA");
-installMixins();
 
 Application.run({ moduleName: "app-root" });
 /*

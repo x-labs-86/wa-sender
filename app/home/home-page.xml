@@ -7,19 +7,35 @@
 
     <StackLayout height="100%" width="100%">
       <GridLayout rows="20, *, auto, *, auto, 10, auto, 10, auto, 10, auto, *" marginRight="10" marginLeft="10">
-        <Image src="res://logo" height="50%" row="2" textAlignment="center" loadMode="async" />
+        <Image src="res://logo" height="45%" row="2" textAlignment="center" loadMode="async" />
         <GridLayout columns="*,auto" row="4" class="label-select-country" tap="changeCountry">
           <Label text="{{ countryFlag + ' ' + countryDialCode + ' ' + countryName }}" col="0" />
           <Label text="&#xf0d7;"  class="fas" col="1" />
         </GridLayout>
         <TextField hint="{{ hint_text }}" class="input-number" keyboardType="phone" text="{{ phone_number }}" textAlignment="center" maxLength="15" row="6" />
-        <Button text="Start to send message" class="btn-whatsapp" row="8" tap="openApps" />
+        
+        <StackLayout row="8">
+          <Button text="Start to send message" class="btn-whatsapp" tap="openApps" marginBottom="20" />
+          <Label textWrap="true" textAlignment="center" fontSize="16">
+            <FormattedString>
+              <Span text="Use pro version to be free from Ads. " />
+            </FormattedString>
+          </Label>
+          <Button tap="upgradeToPro" height="40" fontSize="16" borderRadius="30" background="#F44336" color="#FFF"  horizontalAlignment="center">
+            <FormattedString>
+              <Span text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+              <Span text="&#xf35b;&nbsp;&nbsp;" class="far" />
+              <Span text="Upgrade to Pro Version" />
+              <Span text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
+            </FormattedString>
+          </Button>
+        </StackLayout>
         <StackLayout row="10">
-          <!-- <ui:BannerAd
+          <ui:BannerAd
             height="100"
             width="320"
-            unitId="ca-app-pub-1640120316722376/6291223056"
-            layoutChanged="LARGE_BANNER"/> -->
+            unitId="ca-app-pub-1640120316722376/5648538533"
+            layoutChanged="bannerAdLoaded"/>
         </StackLayout>
       </GridLayout>
     </StackLayout>

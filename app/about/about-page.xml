@@ -4,17 +4,27 @@
     xmlns:ui="@nativescript/firebase-admob">
 
     <ActionBar>
-        <Label text="&#xf0eb;&nbsp;&nbsp;ABOUT" class="far"></Label>
+        <Label>
+            <FormattedString>
+                <Span text="&#xf0eb;" class="far" />
+                <Span text="&nbsp;&nbsp;ABOUT" />
+            </FormattedString>
+        </Label>
         <ActionItem tap="openUrl" text="Blog" url="https://www.kang-cahya.com" android.position="popup" />
         <ActionItem tap="openUrl" text="Github" url="https://github.com/dyazincahya" android.position="popup" />
         <ActionItem tap="openUrl" text="Official Site" url="https://x-labs.my.id" android.position="popup" />
-        <ActionItem tap="openUrl" text="Developer Page" url="https://play.google.com/store/apps/dev?id=8941046243892038548" android.position="popup" />
+        <!-- <ActionItem tap="openUrl" text="Developer Page" url="https://play.google.com/store/apps/dev?id=8941046243892038548" android.position="popup" /> -->
     </ActionBar>
 
     <ScrollView height="100%" width="100%" orientation="vertical" marginTop="30">
         <StackLayout orientation="vertical" class="about">
             
-            <Label text="&#xf2bb; This Apps" textWrap="true" class="header far" />
+            <Label textWrap="true" class="header">
+                <FormattedString>
+                    <Span text="&#xf2bb;" class="far" />
+                    <Span text="&nbsp;This Apps" />
+                </FormattedString>
+            </Label>
 
             <Label text="Name" textWrap="true" class="title" marginTop="10" />
             <Label text="WA Sender" textWrap="true" class="desc" />
@@ -23,12 +33,17 @@
             <Label text="With this apps, you can send message whatsapp to everybody, to every number phone without you save the number" textWrap="true" class="desc" />
             
             <Label text="Version" textWrap="true" class="title" marginTop="10" />
-            <Label text="1.1.3 build 16" textWrap="true" class="desc" />
+            <Label text="1.1.4 build 17" textWrap="true" class="desc" />
 
             <Label text="Developer" textWrap="true" class="title" marginTop="10" />
             <Label text="X-LABS.my.id" textWrap="true" class="desc" />
 
-            <Label text="&#xf5c2; Feedback And Support" textWrap="true" class="header far" marginTop="35" />
+            <Label textWrap="true" class="header" marginTop="35">
+                <FormattedString>
+                    <Span text="&#xf5c2;" class="far" />
+                    <Span text="&nbsp;Feedback And Support" />
+                </FormattedString>
+            </Label>
 
             <GridLayout marginTop="10" columns="*,*">
                 <StackLayout col="0">
@@ -43,7 +58,12 @@
                 </StackLayout>
             </GridLayout>
 
-            <Label text="&#xf25d; Credit" textWrap="true" class="header far" marginTop="35" />
+            <Label textWrap="true" class="header" marginTop="35">
+                <FormattedString>
+                    <Span text="&#xf25d;" class="far" />
+                    <Span text="&nbsp;Credit" />
+                </FormattedString>
+            </Label>
 
             <Label text="Font Icon" textWrap="true" class="title" marginTop="10" />
             <Label text="fontawesome.com" textWrap="true" class="desc" />
@@ -52,7 +72,12 @@
             <Label text="flaticon.com/free-icons/direction" textWrap="true" class="desc" />
             <Label text="flaticon.com/authors/murmur" textWrap="true" class="desc" />  
 
-            <Label text="&#xf3ab; Our other Apps" textWrap="true" class="header fab" marginTop="35" />
+            <Label textWrap="true" class="header" marginTop="35">
+                <FormattedString>
+                    <Span text="&#xf3ab;" class="fab" />
+                    <Span text="&nbsp;Our other Apps" />
+                </FormattedString>
+            </Label>
             <ListView height="{{ heightListView }}" items="{{ items }}" itemTap="onItemTap" separatorColor="#40aeff" class="list-group" marginTop="10" visibility="{{ items ? 'visible' : 'collapsed' }}">
                 <ListView.itemTemplate>
                     <GridLayout class="list-group-item" rows="auto,auto,auto" columns="10, auto, 10, *, 10" tap="openUrl" url="{{ playstore_url }}">

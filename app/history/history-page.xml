@@ -5,7 +5,12 @@
     xmlns:ui="@nativescript/firebase-admob">
 
     <ActionBar>
-        <Label text="&#xf1da;&nbsp;&nbsp;HISTORY" class="fas"></Label>
+        <Label>
+            <FormattedString>
+                <Span text="&#xf1da;" class="fas" />
+                <Span text="&nbsp;&nbsp;HISTORY" />
+            </FormattedString>
+        </Label>
         <ActionItem tap="refreshTap" text="Refresh this page" android.position="popup" />
         <ActionItem tap="clearTap" text="Clear all history" android.position="popup" />
         <!-- <ActionItem tap="__migrateToSqlite" text="Migrate" android.position="popup" />

@@ -1,3 +1,4 @@
+import { ApplicationSettings, Utils, Dialogs } from "@nativescript/core";
 import { GlobalModel } from "~/global_model";
 import {
   fixingPhoneNumberFormat,
@@ -7,7 +8,6 @@ import {
   init__tables,
 } from "~/global_helper";
 import { LSget, LSinsert, LSdrop } from "~/local_storage_array";
-import { ApplicationSettings, Utils, Dialogs } from "@nativescript/core";
 import {
   SQL__select,
   SQL__insert,
@@ -190,4 +190,14 @@ export function __autoMigrateToSqlite() {
       }); */
     }
   }
+}
+
+export function upgradeToPro(args) {
+  Utils.openUrl(
+    "https://play.google.com/store/apps/details?id=com.kang.cahya.apps.whatsappsenderpro"
+  );
+}
+
+export function bannerAdLoaded(args) {
+  // console.log("args", args);
 }
