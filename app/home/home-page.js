@@ -1,19 +1,20 @@
-import { ApplicationSettings, Utils, Dialogs } from "@nativescript/core";
+import {
+  ApplicationSettings,
+  Utils,
+  Dialogs,
+  knownFolders,
+  Folder,
+  path,
+} from "@nativescript/core";
 import { GlobalModel } from "~/global_model";
 import {
   fixingPhoneNumberFormat,
   getCurrentTime,
-  generateUUID,
   loadMyAdMob,
   init__tables,
 } from "~/global_helper";
-import { LSget, LSinsert, LSdrop } from "~/local_storage_array";
-import {
-  SQL__select,
-  SQL__insert,
-  SQL__update,
-  SQL__delete,
-} from "~/sql_helper";
+import { LSget, LSdrop } from "~/local_storage_array";
+import { SQL__insert } from "~/sql_helper";
 
 var model = GlobalModel([]);
 var context, framePage, currentCountry;
@@ -21,8 +22,12 @@ var context, framePage, currentCountry;
 export function onLoaded(args) {
   framePage = args.object.frame;
 
+  _createDirectories();
   __autoMigrateToSqlite();
-  loadMyAdMob();
+
+  setTimeout(() => {
+    loadMyAdMob();
+  }, 500);
 
   if (!ApplicationSettings.hasKey("HAS_SETUP")) {
     const defaultSettings = {
@@ -200,4 +205,26 @@ export function upgradeToPro(args) {
 
 export function bannerAdLoaded(args) {
   // console.log("args", args);
+}
+
+function _createDirectories() {
+  const cacheFolderPath = path.join(
+    knownFolders.temp().path,
+    "WebView/Crashpad"
+  );
+
+  const cacheFolder = Folder.fromPath(cacheFolderPath);
+  // console.log("Checking if Crashpad directory exists...");
+  cacheFolder
+    .getEntities()
+    .then((entities) => {
+      // console.log(
+      //   "Crashpad directory exists, entities found: " + entities.length
+      // );
+    })
+    .catch((error) => {
+      // console.log("Crashpad directory does not exist, creating directory...");
+      // Folder.fromPath(cacheFolderPath);
+      // console.log("Crashpad directory created successfully");
+    });
 }

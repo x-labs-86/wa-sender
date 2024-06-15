@@ -552,7 +552,7 @@ export function loadMyAdMob() {
     });
   });
 
-  // ad.load();
+  ad.load();
 }
 
 export async function myHttpClient(_url, _method = "GET", _data = {}) {

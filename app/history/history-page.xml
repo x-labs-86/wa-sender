@@ -37,10 +37,11 @@
             <Button row="3" tap="refreshTap" text="Refresh" width="100" />
         </GridLayout>
         <StackLayout row="3">
-            <!-- <ui:BannerAd
+            <ui:BannerAd
                 height="100"
                 width="320"
-                unitId="ca-app-pub-1640120316722376/5648538533"/> -->
+                unitId="ca-app-pub-1640120316722376/5648538533"
+                layoutChanged="bannerAdLoaded"/>
         </StackLayout>
     </GridLayout>
 </Page>

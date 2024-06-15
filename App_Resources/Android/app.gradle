@@ -1,8 +1,8 @@
 // You can add your native dependencies here
 dependencies {
   //  implementation 'androidx.multidex:multidex:2.0.1'
-  implementation 'com.google.android.gms:play-services-ads:22.6.0'
-  implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+  implementation 'com.google.android.gms:play-services-ads' //:22.6.0
+  implementation(platform("com.google.firebase:firebase-bom")) //:32.7.0
   implementation("com.google.firebase:firebase-analytics-ktx")
 }
 
@@ -16,8 +16,8 @@ android {
     targetSdkVersion 34
 
     // Version Information
-    versionCode 17
-    versionName "1.1.4"
+    versionCode 19
+    versionName "1.1.5"
     
     generatedDensities = []
   }

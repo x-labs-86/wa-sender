@@ -25,7 +25,9 @@ export function onLoaded() {
   // __loadData();
   init__tables();
   __loadDataSqlite();
-  // loadMyAdMob();
+  setTimeout(() => {
+    loadMyAdMob();
+  }, 500);
 }
 
 export function onNavigatingTo(args) {
@@ -298,7 +300,9 @@ export function clearTap() {
     neutralButtonText: "No",
   }).then((result) => {
     if (result) {
-      loadMyAdMob();
+      setTimeout(() => {
+        loadMyAdMob();
+      }, 500);
       // LSdrop();
       SQL__delete("dataphone", null, "WHERE history=1");
       // SQL__truncate("dataphone");
@@ -361,7 +365,9 @@ export function onItemTap(args) {
         };
         confirm(confirmOptions).then((result) => {
           if (result === true) {
-            loadMyAdMob();
+            setTimeout(() => {
+              loadMyAdMob();
+            }, 500);
             // LSremove(itemIndex);
             SQL__delete("dataphone", itemTapData.id);
             __loadDataSqlite();
@@ -412,4 +418,8 @@ export function _saveToPhoneBook(contact) {
     const url = `telprompt:${contact.phone}`;
     Utils.ios.openURL(url);
   }
+}
+
+export function bannerAdLoaded(args) {
+  // console.log("args", args);
 }
