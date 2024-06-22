@@ -16,21 +16,10 @@ android {
     targetSdkVersion 34
 
     // Version Information
-    versionCode 20
+    versionCode 21
     versionName "1.1.6"
     
     generatedDensities = []
-  }
-
-  buildTypes {
-    release {
-      minifyEnabled true
-      proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-    }
-  }
-
-  buildFeatures {
-    viewBinding true
   }
 
   aaptOptions {
