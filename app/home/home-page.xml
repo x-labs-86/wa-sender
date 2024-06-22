@@ -16,19 +16,19 @@
         
         <StackLayout row="8">
           <Button text="Start to send message" class="btn-whatsapp" tap="openApps" marginBottom="20" />
-          <Label textWrap="true" textAlignment="center" fontSize="16">
+          <!-- <Label textWrap="true" textAlignment="center" fontSize="16">
             <FormattedString>
               <Span text="Use pro version to be free from Ads. " />
             </FormattedString>
-          </Label>
-          <Button tap="upgradeToPro" height="40" fontSize="16" borderRadius="30" background="#F44336" color="#FFF"  horizontalAlignment="center">
+          </Label> -->
+          <!-- <Button tap="upgradeToPro" height="40" fontSize="16" borderRadius="30" background="#F44336" color="#FFF"  horizontalAlignment="center">
             <FormattedString>
               <Span text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
               <Span text="&#xf35b;&nbsp;&nbsp;" class="far" />
               <Span text="Upgrade to Pro Version" />
               <Span text="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" />
             </FormattedString>
-          </Button>
+          </Button> -->
         </StackLayout>
         <StackLayout row="10">
           <ui:BannerAd
